@@ -1,0 +1,19 @@
+;----------------------------------------------------------
+; Copyright (c) 2023 Alexander Baskikh
+;
+; MIT License (MIT), http://opensource.org/licenses/MIT
+; Full license can be found in the LICENSE file
+;----------------------------------------------------------
+
+;--------------------------------------
+; IO addresses
+;--------------------------------------
+
+    .ifndef _IO_AH
+_IO_AH = 1
+
+IO_START = 0xD000
+PIC_ADDR = 0xD000
+TTY_ADDR = 0xD010
+
+    .endif  ; _IO_AH

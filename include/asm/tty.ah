@@ -1,0 +1,33 @@
+;----------------------------------------------------------
+; Copyright (c) 2023 Alexander Baskikh
+;
+; MIT License (MIT), http://opensource.org/licenses/MIT
+; Full license can be found in the LICENSE file
+;----------------------------------------------------------
+
+;--------------------------------------
+; TTY functions
+; TTY_PUTCHAR
+;--------------------------------------
+
+    .ifndef _TTY_AH
+_TTY_AH = 1
+
+    .include asm/io.ah
+
+    .macro TTY_PUTCHAR
+        ; %a - char to print
+        sta TTY_ADDR
+    .endm
+
+    .macro TTY_CLEAR
+        pha
+        lda #$80
+        TTY_PUTCHAR
+        pla
+    .endm
+
+    .extern _tty_putchar
+    .extern _tty_puts
+
+    .endif  ; _TTY_AH

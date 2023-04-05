@@ -1,0 +1,5 @@
+compilers:
+  - description: vc for 6502
+    match-sources: ".*\\.c"
+    match-compiler-exe: "(.*/)?vc"
+    match-language: C
